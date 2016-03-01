@@ -1,0 +1,75 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+<dom-module id="match-element">
+    <style>
+      :host {
+      }
+
+      section {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+      }
+      span {
+        @apply(--paper-font-body1);
+      }
+      .avatar {
+        border: 3px solid black;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        display: block;
+        flex-shrink: 0;
+      }
+      .username {
+
+      }
+    </style>
+
+  <template>
+    <section class="user-list">
+      <div class="avatar" style="background-image: url({{avatar}})">
+        &nbsp;
+      </div>
+      <div flex>
+        <div class="username">{{username}}</div>
+        <div class="text">{{text}}</div>
+      </div>
+    </section>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'match-element',
+
+        properties: {
+          avatar: {
+            type: String
+          },
+          color:{
+            type: String
+          },
+          username:{
+            type: String
+          },
+          text:{
+            type: String
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>
